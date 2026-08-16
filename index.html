@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitMoon Official | Explore the Outdoors</title>
+    <style>
+        /* 全局样式设定：户外运动风 */
+        :root {
+            --primary-dark: #1F2937; /* 深灰/黑 */
+            --outdoor-green: #2F855A; /* 森林绿 */
+            --vibrant-orange: #ED8936; /* 活力橙 */
+            --text-light: #F3F4F6;
+            --text-dark: #374151;
+        }
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--text-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+        h1, h2, h3 { margin: 0; }
+        a { text-decoration: none; color: inherit; }
+        
+        /* 导航栏 */
+        header {
+            background-color: var(--primary-dark);
+            color: white;
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 1px; color: var(--vibrant-orange); }
+        
+        /* 主视觉区 Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--outdoor-green) 100%);
+            color: white;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .hero p { font-size: 1.2rem; max-width: 600px; margin: 0 auto 2rem; opacity: 0.9; }
+        .btn {
+            background-color: var(--vibrant-orange);
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            font-weight: bold;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+        .btn:hover { transform: translateY(-2px); background-color: #DD6B20; }
+
+        /* 核心卖点 Features */
+        .features {
+            padding: 4rem 5%;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+        }
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--outdoor-green);
+        }
+        .feature-card h3 { color: var(--outdoor-green); margin-bottom: 1rem; }
+
+        /* 客户支持与表单 Support Section */
+        .support {
+            background-color: #E5E7EB;
+            padding: 4rem 5%;
+            text-align: center;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 2rem auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        form { display: flex; flex-direction: column; gap: 1rem; text-align: left; }
+        label { font-weight: bold; font-size: 0.9rem; }
+        input, textarea {
+            width: 100%; padding: 0.8rem;
+            border: 1px solid #D1D5DB; border-radius: 5px;
+            box-sizing: border-box; font-family: inherit;
+        }
+        button {
+            background-color: var(--outdoor-green);
+            color: white; padding: 1rem;
+            border: none; border-radius: 5px;
+            font-size: 1rem; font-weight: bold; cursor: pointer;
+        }
+        button:hover { background-color: #276749; }
+
+        /* 页脚 Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: white; text-align: center;
+            padding: 2rem 5%; font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="logo">FitMoon</div>
+        <nav>
+            <a href="#support">Support & Warranty</a>
+        </nav>
+    </header>
+
+    <!-- 主视觉区 -->
+    <section class="hero">
+        <h1>Conquer Every Environment</h1>
+        <p>Built for the outdoors. Tracking your vitals, mapping your routes, and keeping you connected no matter where your adventure takes you.</p>
+        <a href="#support" class="btn">Get Support</a>
+    </section>
+
+    <!-- 核心功能区 -->
+    <section class="features">
+        <div class="feature-card">
+            <h3>5ATM Waterproof</h3>
+            <p>Ready for swimming, surfing, and battling the elements in any weather condition.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Outdoor Modes</h3>
+            <p>Precision tracking for hiking, running, cycling, and dozens of other activities.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Extended Battery</h3>
+            <p>Spend more time exploring and less time charging with our ultra-endurance battery.</p>
+        </div>
+    </section>
+
+    <!-- 视频指导区 Video Guides -->
+    <section class="support" style="background-color: white;">
+        <h2>Video Guides</h2>
+        <p>Learn how to set up and get the most out of your FitMoon watch.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 2rem;">
+            
+            <!-- 视频 1：如何配对 -->
+            <div style="width: 100%; max-width: 400px; text-align: left;">
+                <h3 style="color: var(--outdoor-green); margin-bottom: 1rem;">How to pair your watch</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/Z0Kue_sHub0" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <!-- 视频 2：如何校准指南针 -->
+            <div style="width: 100%; max-width: 400px; text-align: left;">
+                <h3 style="color: var(--outdoor-green); margin-bottom: 1rem;">How to calibrate your compass</h3>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" src="https://www.youtube.com/embed/3Zilr7loeuI" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 客服与保修表单区 -->
+    <section id="support" class="support">
+        <h2>Customer Support & Warranty</h2>
+        <p>Need help with your FitMoon smartwatch? Submit a ticket below.</p>
+        <div class="form-container">
+            
+            <!-- 完美集成的 Formspree 链接 -->
+            <form action="https://formspree.io/f/xdenlqko" method="POST">
+                
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required placeholder="John Doe">
+                
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required placeholder="john@example.com">
+
+                <label for="order_number">Amazon Order Number (If applicable)</label>
+                <input type="text" id="order_number" name="order_number" placeholder="123-1234567-1234567">
+                
+                <label for="message">How can we help?</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Describe your issue or question here..."></textarea>
+                
+                <button type="submit">Submit Ticket</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <p>&copy; 2026 FitMoon Official. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
