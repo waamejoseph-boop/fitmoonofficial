@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FitMoon Official | Explore the Outdoors</title>
+    <title>FitMoon Official | Care & Support</title>
     <style>
         /* 全局样式设定：户外运动风 */
         :root {
@@ -23,7 +23,7 @@
         h1, h2, h3 { margin: 0; }
         a { text-decoration: none; color: inherit; }
         
-        /* 导航栏 (更新了 Logo 对齐方式) */
+        /* 导航栏 */
         header {
             background-color: var(--primary-dark);
             color: white;
@@ -33,16 +33,15 @@
             align-items: center;
         }
         .logo img {
-            height: 40px; /* 如果觉得 Logo 太小，可以把这里改成 50px */
+            height: 40px; 
             display: block;
         }
         
-        /* 主视觉区 Hero Section (更新为图片背景+半透明遮罩) */
+        /* 主视觉区 Hero Section */
         .hero {
-            /* 这里的 rgba 负责深色半透明遮罩，url('hero-bg.jpg') 负责加载你的场景图 */
             background: linear-gradient(rgba(31, 41, 55, 0.7), rgba(47, 133, 90, 0.7)), url('hero-bg.jpg') center/cover no-repeat;
             color: white;
-            padding: 6rem 5%; /* 稍微加大了上下间距，让背景图展示得更多 */
+            padding: 6rem 5%; 
             text-align: center;
         }
         .hero h1 { font-size: 2.5rem; margin-bottom: 1rem; }
@@ -58,7 +57,7 @@
         }
         .btn:hover { transform: translateY(-2px); background-color: #DD6B20; }
 
-        /* 核心卖点 Features */
+        /* 核心服务承诺区 Features */
         .features {
             padding: 4rem 5%;
             display: flex;
@@ -116,10 +115,9 @@
 </head>
 <body>
 
-    <!-- 导航栏 (Logo改为图片) -->
+    <!-- 导航栏 -->
     <header>
         <div class="logo">
-            <!-- 指向你的 logo 图片 -->
             <a href="#"><img src="logo.png" alt="FitMoon Logo"></a>
         </div>
         <nav>
@@ -127,26 +125,26 @@
         </nav>
     </header>
 
-    <!-- 主视觉区 -->
+    <!-- 主视觉区 (已替换为售后安抚文案) -->
     <section class="hero">
-        <h1>Conquer Every Environment</h1>
-        <p>Built for the outdoors. Tracking your vitals, mapping your routes, and keeping you connected no matter where your adventure takes you.</p>
-        <a href="#support" class="btn">Get Support</a>
+        <h1>FitMoon Care & Support</h1>
+        <p>Having trouble with your watch? Please don't worry. We stand 100% behind our products. Whether it's a setup issue or a defective unit, we are here to make it right.</p>
+        <a href="#support" class="btn">Get Help Now</a>
     </section>
 
-    <!-- 核心功能区 -->
+    <!-- 核心服务承诺区 (已替换为三大售后承诺) -->
     <section class="features">
         <div class="feature-card">
-            <h3>5ATM Waterproof</h3>
-            <p>Ready for swimming, surfing, and battling the elements in any weather condition.</p>
+            <h3>Hassle-Free Replacements</h3>
+            <p>If your watch experiences any quality issues, we will send you a brand-new replacement for absolutely free. No complicated return process is required.</p>
         </div>
         <div class="feature-card">
-            <h3>Outdoor Modes</h3>
-            <p>Precision tracking for hiking, running, cycling, and dozens of other activities.</p>
+            <h3>100% Satisfaction Guarantee</h3>
+            <p>We take full responsibility for your shopping experience. We kindly ask you to give us the opportunity to solve your problem before making any final decisions or sharing your feedback online.</p>
         </div>
         <div class="feature-card">
-            <h3>Extended Battery</h3>
-            <p>Spend more time exploring and less time charging with our ultra-endurance battery.</p>
+            <h3>24-Hour Fast Response</h3>
+            <p>Reach out to us anytime. Our dedicated support team responds within 24 hours to turn any frustrating situation into a 5-star experience.</p>
         </div>
     </section>
 
@@ -177,11 +175,10 @@
 
     <!-- 客服与保修表单区 -->
     <section id="support" class="support">
-        <h2>Customer Support & Warranty</h2>
-        <p>Need help with your FitMoon smartwatch? Submit a ticket below.</p>
+        <h2>Submit a Warranty Claim</h2>
+        <p>Please fill out the form below with your Amazon order number. Let us turn your problem into a happy resolution!</p>
         <div class="form-container">
             
-            <!-- 完美集成的 Formspree 链接 -->
             <form action="https://formspree.io/f/xdenlqko" method="POST">
                 
                 <label for="name">Full Name</label>
