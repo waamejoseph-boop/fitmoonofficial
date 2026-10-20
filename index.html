@@ -106,6 +106,7 @@
             transition: background-color 0.3s;
         }
         button:hover { background-color: #276749; }
+        button:disabled { background-color: #9CA3AF; cursor: not-allowed; }
 
         /* 页脚 Footer */
         footer {
@@ -170,7 +171,8 @@
         <h2>Submit a Warranty Claim</h2>
         <p>Please fill out the form below with your Amazon order number. Let us turn your problem into a happy resolution!</p>
         <div class="form-container">
-            <form id="contactForm" action="https://formspree.io/f/xqpzypre" method="POST">
+            <!-- 已经加入了 onsubmit 强制拦截绑定 -->
+            <form id="contactForm" action="https://formspree.io/f/xqpzypre" method="POST" onsubmit="return handleFormSubmit(event)">
                 
                 <label for="name">Full Name</label>
                 <input type="text" id="name" name="name" required placeholder="John Doe">
@@ -204,29 +206,46 @@
         <p>&copy; 2026 FitMoon Official. All rights reserved.</p>
     </footer>
 
-    <!-- 绕过 Formspree 跳转墙的 AJAX 提交逻辑 -->
+    <!-- 更暴力的拦截与强制跳转 JavaScript 逻辑 -->
     <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
+        // 邮箱二次确认的实时拦截逻辑（失焦时检查）
+        document.getElementById("confirm_email").addEventListener("blur", function() {
+            var email = document.getElementById("email").value;
+            var confirmEmail = this.value;
+            var errorMessage = document.getElementById("email_error");
+            if (email && confirmEmail && email !== confirmEmail) {
+                errorMessage.style.display = "block";
+            } else {
+                errorMessage.style.display = "none";
+            }
+        });
+
+        // 表单提交时的终极拦截与强制跳转逻辑
+        function handleFormSubmit(event) {
+            // 1. 强制阻止默认跳转
             event.preventDefault();
 
             var email = document.getElementById("email").value;
             var confirmEmail = document.getElementById("confirm_email").value;
             var errorMessage = document.getElementById("email_error");
 
+            // 2. 再次校验邮箱
             if (email !== confirmEmail) {
                 errorMessage.style.display = "block";
-                return;
-            } else {
-                errorMessage.style.display = "none";
+                return false;
             }
+            errorMessage.style.display = "none";
 
-            var form = event.target;
+            var form = document.getElementById("contactForm");
             var data = new FormData(form);
             var submitBtn = form.querySelector('button[type="submit"]');
             var originalBtnText = submitBtn.innerText;
+            
+            // 3. 改变按钮状态，防止重复点击
             submitBtn.innerText = "Sending..."; 
             submitBtn.disabled = true;
 
+            // 4. 静默发送给 Formspree
             fetch(form.action, {
                 method: form.method,
                 body: data,
@@ -235,18 +254,21 @@
                 }
             }).then(response => {
                 if (response.ok) {
+                    // 发送成功，立刻触发本地页面跳转
                     window.location.href = "success.html"; 
                 } else {
-                    alert("Oops! There was a problem submitting your form");
+                    alert("Oops! There was a problem submitting your form. Please try again.");
                     submitBtn.innerText = originalBtnText;
                     submitBtn.disabled = false;
                 }
             }).catch(error => {
-                alert("Network error. Please try again.");
+                alert("Network error. Please check your connection and try again.");
                 submitBtn.innerText = originalBtnText;
                 submitBtn.disabled = false;
             });
-        });
+
+            return false; // 双重保险，防止表单以传统方式提交
+        }
     </script>
 </body>
 </html>
